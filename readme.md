@@ -22,7 +22,10 @@ npm install
 ## step-1 : Create Simple SPL-Token
 
 Use the SPL-token CLI to create a simple token:
-`spl-token create-token `
+```
+spl-token create-token
+
+```
 
 ## step-2 :Replace Token Values in Code
 
@@ -31,7 +34,9 @@ After creating the token, replace the placeholder values in the code with the ac
 ## step-3 : Run Code
 
 Execute the following command to run the code:
-`node index.js`
+```
+node index.js
+```
 
 ## step- 4 : Verify Token Creation
 
@@ -40,14 +45,20 @@ Check the token creation on any explorer to ensure it was successful.
 ## step- 5 : Create Associate Token Account for User
 
 Generate an associate token account for the user:
-`spl-token create-account <token address>`
+```
+spl-token create-account <token address>
+```
 
 ## step- 6 : Mint Tokens to Your Account
 
 Mint tokens to your account:
-`spl-token mint <token address> <tokne ammount>`
+```
+spl-token mint <token address> <tokne ammount>
+```
 
 ## step- 7 : Transfer Tokens to Another Address
 
 If you wish to transfer created tokens to another address, create an associate account for that user and than transfer using this command
-`spl-token transfer --fund-recipient <token address> <amount> <receiver address> `
+```
+spl-token transfer --fund-recipient <token address> <amount> <receiver address>
+```
