@@ -35,7 +35,7 @@ async function main() {
   const myKeypair = loadWalletKey(keypair);
   //after creating simple spl-token put that address here
   const mint = new web3.PublicKey(
-    '3V8LGqZFQxTfmJyJkGraJqSu7wfj1XW3iMUVTv9Tpg4Q',
+    '9ZSWcy2oDAfkgPWyreMi9wLegTKHqpfP7DdghbRTYeRm',
   );
 
   const umi = createUmi('https://api.devnet.solana.com');
@@ -45,11 +45,11 @@ async function main() {
   // here is metadata modify it as per your choice
   const ourMetadata = {
     // TODO change those values!
-    name: 'Vivek Kadvani Token ',
-    symbol: 'VKT',
-    uri: 'https://github.com/VivekKadvani/test-nft-data/blob/main/example.json',
+    name: 'Reward Token',
+    symbol: 'RPT',
+    uri: 'https://raw.githubusercontent.com/VivekKadvani/test-nft-data/main/example.json',
   };
-
+  // https://raw.githubusercontent.com/VivekKadvani/test-nft-data/blob/main/metadata.json
   const onChainData = {
     ...ourMetadata,
     // we don't need that
@@ -85,6 +85,8 @@ async function main() {
       metadata: findMetadataPda(umi, { mint: fromWeb3JsPublicKey(mint) }),
       updateAuthority: signer,
     };
+    console.log("Metadata acc :", accounts.metadata);
+
     const txid = await updateMetadataAccountV2(umi, {
       ...accounts,
       ...data,
